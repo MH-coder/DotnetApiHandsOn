@@ -1,5 +1,6 @@
 ﻿using IssueTrackingApi.Data;
 using IssueTrackingApi.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -7,6 +8,7 @@ using System.Reflection.Metadata.Ecma335;
 
 namespace IssueTrackingApi.Controllers
 {
+    [Authorize(Roles="Admin")]
     [Route("api/[controller]")]
     [ApiController]
     public class IssueController : ControllerBase
